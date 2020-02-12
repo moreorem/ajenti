@@ -7,7 +7,7 @@ import logging
 from ajenti.api import *
 from ajenti.util import cache_value
 
-from api import Service, ServiceManager
+from .api import Service, ServiceManager
 
 
 class SystemdService (Service):
@@ -49,7 +49,7 @@ class SystemdServiceManager (ServiceManager):
             c.init()
             c.get_all()
             return True
-        except Exception, e:
+        except Exception as e:
             logging.info('Disabling systemd service manager: %s' % str(e))
             return False
 

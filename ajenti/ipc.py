@@ -89,7 +89,7 @@ class IPCServer (BasePlugin):
             os.unlink(socket_path)
         sock.bind(socket_path)
         sock.listen(5)
-        os.chmod(socket_path, 0700)
+        os.chmod(socket_path, 0o700)
 
         server = IPCSocketServer(sock, application=ipc_application, handler_class=IPCWSGIHandler)
         server.serve_forever()

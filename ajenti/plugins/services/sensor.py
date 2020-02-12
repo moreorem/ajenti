@@ -1,6 +1,6 @@
 from ajenti.api import plugin
 from ajenti.api.sensors import Sensor
-from api import ServiceMultiplexor
+from .api import ServiceMultiplexor
 
 
 @plugin

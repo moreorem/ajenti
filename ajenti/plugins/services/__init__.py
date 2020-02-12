@@ -13,21 +13,21 @@ info = PluginInfo(
 
 
 def init():
-    import api
+    from . import api
 
     try:
         import dbus
         
-        import sm_upstart
-        import sm_systemd
+        from . import sm_upstart
+        from . import sm_systemd
     except ImportError:
         pass
 
-    import sm_sysvinit
-    import sm_sysvinit_centos
-    import sm_freebsd
-    import sm_osx
+    from . import sm_sysvinit
+    from . import sm_sysvinit_centos
+    from . import sm_freebsd
+    from . import sm_osx
 
-    import main
-    import widget
-    import sensor
+    from . import main
+    from . import widget
+    from . import sensor

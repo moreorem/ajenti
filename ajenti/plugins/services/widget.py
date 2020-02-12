@@ -2,7 +2,7 @@ from ajenti.api import plugin
 from ajenti.plugins.dashboard.api import ConfigurableWidget
 from ajenti.ui import on
 
-from api import ServiceMultiplexor
+from .api import ServiceMultiplexor
 
 
 @plugin

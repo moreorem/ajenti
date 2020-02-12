@@ -11,7 +11,7 @@ from ajenti.plugins.main.api import SectionPlugin, intent
 from ajenti.ui import on
 from ajenti.ui.binder import Binder
 
-from backend import FMBackend, Item, Unpacker
+from .backend import FMBackend, Item, Unpacker
 
 
 @plugin
@@ -104,7 +104,7 @@ class FileManager (SectionPlugin):
         if not os.path.exists(path):
             try:
                 os.mkdir(path)
-                os.chmod(path, 0755)
+                os.chmod(path, 0o755)
                 self._chown_new(path)
             except OSError as e:
                 self.context.notify('error', str(e))
@@ -327,7 +327,7 @@ class Tab (object):
         self.path = path
         self.shortpath = os.path.split(path)[1] or '/'
         self.items = []
-        for item in os.listdir(unicode(self.path)):
+        for item in os.listdir(str(self.path)):
             itempath = os.path.join(self.path, item)
             if os.path.exists(itempath):
                 self.items.append(Item(itempath))

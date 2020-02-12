@@ -5,7 +5,7 @@ import subprocess
 from ajenti.api import *
 from ajenti.util import cache_value
 
-from api import Service, ServiceManager
+from .api import Service, ServiceManager
 
 
 
@@ -45,7 +45,7 @@ class UpstartServiceManager (ServiceManager):
             c.init()
             c.get_all()
             return True
-        except Exception, e:
+        except Exception as e:
             logging.info('Disabling Upstart service manager: %s' % str(e))
             return False
 

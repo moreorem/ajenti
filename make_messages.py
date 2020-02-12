@@ -60,7 +60,7 @@ if sys.argv[1] == 'extract':
                     msgs = []
 
                     def traverse(n):
-                        for k, v in n.items():
+                        for k, v in list(n.items()):
                             if v.startswith('{') and v.endswith('}'):
                                 msgs.append(v[1:-1])
                             try:

@@ -3,7 +3,7 @@ import gzip
 import cgi
 import math
 import gevent
-from StringIO import StringIO
+from io import StringIO
 from datetime import datetime
 
 from socketio.handler import SocketIOHandler
@@ -113,7 +113,7 @@ class HttpContext (object):
 
         :type key: str
         """
-        self.headers = filter(lambda h: h[0] != key, self.headers)
+        self.headers = [h for h in self.headers if h[0] != key]
 
     def fallthrough(self, handler):
         """

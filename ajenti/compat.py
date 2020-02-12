@@ -111,7 +111,7 @@ def new_sslwrap(sock, server_side=False, keyfile=None, certfile=None, cert_reqs=
     if certfile:
         context.load_cert_chain(certfile, keyfile)
     if ciphers:
-        print ciphers
+        print(ciphers)
         context.set_ciphers(ciphers)
 
     caller_self = inspect.currentframe().f_back.f_locals['self']

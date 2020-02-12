@@ -5,7 +5,7 @@ from ajenti.ui.binder import Binder
 from ajenti.ui import p, UIElement, on
 from ajenti.plugins.main.api import SectionPlugin
 
-from api import ServiceMultiplexor
+from .api import ServiceMultiplexor
 
 
 @plugin
@@ -51,7 +51,7 @@ class Services (SectionPlugin):
         self.context.notify('info', _('%s restarted') % item.name)
 
 
-@p('name', bindtypes=[str, unicode])
+@p('name', bindtypes=[str, str])
 @p('buttons', default=[], type=eval)
 @plugin
 class ServiceControlBar (UIElement):

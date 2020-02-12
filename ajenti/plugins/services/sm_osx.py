@@ -4,7 +4,7 @@ import subprocess
 from ajenti.api import *
 from ajenti.util import cache_value
 
-from api import Service, ServiceManager
+from .api import Service, ServiceManager
 
 
 @plugin

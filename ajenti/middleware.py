@@ -77,7 +77,7 @@ class SessionMiddleware (HttpHandler):
         """
         Eliminates dead sessions
         """
-        for session in [x for x in self.sessions.values() if x.is_dead()]:
+        for session in [x for x in list(self.sessions.values()) if x.is_dead()]:
             del self.sessions[session.id]
 
     def open_session(self, context):

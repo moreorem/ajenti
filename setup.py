@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!./bin python3
 
 from distutils.core import setup
 from setuptools import find_packages
@@ -6,7 +6,7 @@ import os
 
 import ajenti
 
-__requires = filter(None, open('requirements.txt').read().splitlines())
+__requires = [_f for _f in open('requirements.txt').read().splitlines() if _f]
 
 exclusion = [
     'ajenti.plugins.elements',

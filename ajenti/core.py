@@ -1,4 +1,4 @@
-from __future__ import unicode_literals
+
 
 import exconsole
 import locale
@@ -29,6 +29,7 @@ import gevent.ssl
 from gevent import monkey
 
 import ajenti.ipc
+import imp
 
 # Gevent monkeypatch ---------------------
 try:
@@ -49,7 +50,7 @@ from socketio.server import SocketIOServer
 def run():
     ajenti.init()
 
-    reload(sys)
+    imp.reload(sys)
     sys.setdefaultencoding('utf8')
 
     try:
@@ -75,7 +76,7 @@ def run():
             return sessions
 
         def cmd_list_instances_session():
-            cmd_list_instances(cmd_sessions().values()[0].appcontext)
+            cmd_list_instances(list(cmd_sessions().values())[0].appcontext)
 
         exconsole.register(commands=[
             ('_manager', 'PluginManager', ajenti.plugins.manager),

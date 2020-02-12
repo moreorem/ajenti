@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import subprocess
 import shutil
 import glob
@@ -87,7 +87,7 @@ def traverse(fx):
     done_gls = []
     length = 40
     total = len(greenlets)
-    print
+    print()
 
     while True:
         for gl in greenlets:
@@ -99,7 +99,7 @@ def traverse(fx):
                 sys.stdout.flush()
         gevent.sleep(0.1)
         if done == total:
-            print
+            print()
             break
 
 

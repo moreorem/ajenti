@@ -7,7 +7,7 @@ from ajenti.api import *
 from ajenti.api.helpers import subprocess_call_background, subprocess_check_output_background
 from ajenti.util import cache_value
 
-from api import Service, ServiceManager
+from .api import Service, ServiceManager
 
 
 @plugin
